@@ -187,3 +187,28 @@ int test(int n)
 
 
 
+//主函数
+int main(void)
+{
+	int choice = 0;		//接收用户的选择	
+	//循环开始功能，本次用do……while循环
+	do
+	{
+		showMenu();				//显示菜单
+		choice = getChoice();
+
+		//控制choice的范围
+		if (choice < 0 || choice>5)
+		{
+			choice = 1;			//强制做加法
+		}
+		if (choice == 0)
+		{
+			break;					//用户选择0，退出循环（退出系统）
+		}
+
+		doExercise(choice);		//做什么练习，并启动评分
+	} while (choice != 0);
+	printf("欢迎使用本软件，再见！\n");
+	return 0;
+}
